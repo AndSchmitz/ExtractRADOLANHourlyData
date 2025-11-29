@@ -10,6 +10,7 @@ This script extracts [DWD RADOLAN hourly precipitation amounts](https://www.dwd.
  - Adjust the variable "WorkDir" in the beginning of "ExtractRADOLANHourlyData.R" to match the working directory.
  - Run the script. Output is incrementally written to a file in WorkDir/Output.
  - Adjust the "TargetLocationsAndTimeSpans.csv" to your needs.
+ - **WARNING:** For some years or data sources (recent vs. reproc), RADOLAN raw data is not in the default format, so extracted values need to be multiplied by 10
 
 ## Validation
 The values extracted with the R script have been compared to values extracted with the [radolan2map QGIS plugin](https://gitlab.com/Weatherman_/radolan2map/-/wikis/home). Precipitation amounts at four locations for 2021-01-01 00:50 (ASCII raster file RW-20210101.tar.gz from [here](https://opendata.dwd.de/climate_environment/CDC/grids_germany/hourly/radolan/)) have been compared. The results are shown below. The difference observed for location C is likely related to interpolation during extraction from raster data. The spatial projection information for the raster data used in the R script has been taken from page 17 in [this pdf](https://opendata.dwd.de/climate_environment/CDC/help/RADOLAN/Unterstuetzungsdokumente/Unterstuetzungsdokument_Verwendung_von_RADOLAN_RADKLIM_Produkten_in_GIS_Software.pdf).
